@@ -16,7 +16,7 @@ import java.util.List;
 
 public class UniqueCharacters {
     public static void main(String[] args) {
-        String word = "iianagrampkktyhaac";
+        String word = "iianagrampkktyhaacccc";
         System.out.println(uniqueCharacters(word));
     }
 
