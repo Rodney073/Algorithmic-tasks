@@ -16,27 +16,27 @@ public class MatrixRowSet0 {
                 {7, 0, 5, 5, 6},
                 {4, 2, 4, 4, 3}
         };
-        System.out.println(Arrays.deepToString(setRowIfContainsZero(matrix)));
+        System.out.println(Arrays.deepToString(setRowAndColIfContainsZero(matrix)));
     }
 
-    private static int[][] setRowIfContainsZero(int[][] matrix) {
+    private static int[][] setRowAndColIfContainsZero(int[][] matrix) {
 
         List<Integer> listOfColumnNums = new ArrayList<>();
 
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                if (matrix[i][j] == 0) {
-                    Arrays.fill(matrix[i], 0);
-                    listOfColumnNums.add(j);
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = 0; col < matrix[row].length; col++) {
+                if (matrix[row][col] == 0) {
+                    Arrays.fill(matrix[row], 0);
+                    listOfColumnNums.add(col);
                     break;
                 }
             }
         }
 
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                if (listOfColumnNums.contains(j)) {
-                    matrix[i][j] = 0;
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = 0; col < matrix[row].length; col++) {
+                if (listOfColumnNums.contains(col)) {
+                    matrix[row][col] = 0;
                 }
             }
         }
