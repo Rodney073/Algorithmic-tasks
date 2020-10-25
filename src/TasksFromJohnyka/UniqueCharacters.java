@@ -11,16 +11,47 @@
         --------------------------------*/
 package TasksFromJohnyka;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class UniqueCharacters {
     public static void main(String[] args) {
         String word = "iianagrampkktyhaacccc";
-        System.out.println(uniqueCharacters(word));
+        //System.out.println(uniqueCharacters(word));
+        System.out.println(uniqueCharacters2(word));
     }
 
-    private static List<Character> uniqueCharacters(String word) {
+    private static List uniqueCharacters2(String word) {
+
+        List <Character> listOfUniqCharacters = new ArrayList<>();
+
+        for (int i = 0; i <word.length() ; i++) {
+            if (!listOfUniqCharacters.contains(word.charAt(i))) {
+                listOfUniqCharacters.add(word.charAt(i));
+            }
+        }
+
+        for (int i = 0; i < listOfUniqCharacters.size() ; i++) {
+            int counter =0;
+            for (int j = 0; j <word.length() ; j++) {
+                if (listOfUniqCharacters.get(i).equals(word.charAt(j))) {
+                    counter++;
+                }
+            }
+            if (counter > 1) {
+                listOfUniqCharacters.remove(i);
+                i=-1;
+            }
+
+        }
+
+        return listOfUniqCharacters;
+    }
+
+
+
+/*    private static List<Character> uniqueCharacters(String word) {
 
         List<Character> listOfChars = new ArrayList<>();
 
@@ -49,6 +80,6 @@ public class UniqueCharacters {
         }
         return listOfChars;
 
-    }
+    }*/
 
 }

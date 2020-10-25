@@ -13,11 +13,28 @@ package TasksFromJohnyka;
 
 public class TheSecondBiggest {
     public static void main(String[] args) {
-        int[] numbers = {5, 1, 2, 7, 9, 2, 4};
+        int[] numbers = {5, 1, 2, 7, 9, 2, 4, 8};
         System.out.println(secondBiggest(numbers));
     }
 
     private static int secondBiggest(int[] numbers) {
+        int container = 0;
+        for (int i = 0; i < 2 ; i++) {
+            for (int j = 1; j <numbers.length ; j++) {
+                if (numbers[i] < numbers[j]) {
+                    container =numbers[i];
+                    numbers[i] = numbers[j];
+                    numbers[j] = container;
+                }
+            }
+
+        }
+        return numbers[1];
+    }
+
+
+
+/*    private static int secondBiggest(int[] numbers) {
 
         int container = 0;
 
@@ -35,5 +52,5 @@ public class TheSecondBiggest {
         }
 
         return numbers[1];
-    }
+    }*/
 }

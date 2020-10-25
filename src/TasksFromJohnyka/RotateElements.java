@@ -37,11 +37,29 @@ public class RotateElements {
         }
 
         System.out.println(Arrays.toString(rotateElements(array, shift)));
-        System.out.println(Arrays.toString(rotateElements2(array2, shift)));
-        System.out.println(Arrays.toString(rotateElements3(array3, shift)));
+        //System.out.println(Arrays.toString(rotateElements2(array2, shift)));
+        //System.out.println(Arrays.toString(rotateElements3(array3, shift)));
     }
 
-    private static int[] rotateElements(int[] array, int input) {
+    private static int[] rotateElements(int[] array, int shift) {
+
+        int container = 0;
+        for (int i = 0; i < shift; i++) {
+            container = array[0];
+
+            for (int j = 0; j < array.length - 1; j++) {
+                array[j] = array[j + 1];
+            }
+
+            array[array.length - 1] = container;
+        }
+        return array;
+
+    }
+
+
+
+   /* private static int[] rotateElements(int[] array, int input) {
 
 
         List<Integer> containerList = new ArrayList<>();
@@ -92,5 +110,5 @@ public class RotateElements {
         }
         return array;
     }
-
+*/
 }

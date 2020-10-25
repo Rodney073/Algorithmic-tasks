@@ -26,7 +26,20 @@ public class RemoveDuplicates {
         System.out.println((returnDuplicate(numbers)));
     }
 
-    private static List<Integer> returnDuplicate(int[] numbers) {
+    private static List returnDuplicate(int[] numbers) {
+        List <Integer> cleanedList = new ArrayList<>();
+
+        for (int i = 0; i < numbers.length ; i++) {
+            if (!cleanedList.contains(numbers[i])) {
+                cleanedList.add(numbers[i]);
+            }
+        }
+
+        return cleanedList;
+    }
+
+
+/*    private static List<Integer> returnDuplicate(int[] numbers) {
 
         List<Integer> intList = new ArrayList<Integer>();
         for (int i : numbers) {
@@ -44,7 +57,7 @@ public class RemoveDuplicates {
         }
 
         return intList;
-    }
+    }*/
 
 
 

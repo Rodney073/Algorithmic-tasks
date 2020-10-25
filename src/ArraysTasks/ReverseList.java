@@ -8,12 +8,21 @@ import java.util.Arrays;
 
 public class ReverseList {
     public static void main(String[] args) {
-        
+
         int[] numbers = {3, 4, 5, 6, 7};
         System.out.println(Arrays.toString(reverseList(numbers)));
     }
 
     private static int[] reverseList(int[] numbers) {
+        int[] reverseList = new int[numbers.length];
+        for (int i = 0; i < numbers.length; i++) {
+            reverseList[i] = numbers[numbers.length - 1 - i];
+        }
+        return reverseList;
+    }
+
+
+/*    private static int[] reverseList(int[] numbers) {
 
         int [] reversedNumbers = new int [numbers.length];
 
@@ -21,5 +30,5 @@ public class ReverseList {
             reversedNumbers[i] = numbers[numbers.length-1-i];
         }
         return reversedNumbers;
-    }
+    }*/
 }

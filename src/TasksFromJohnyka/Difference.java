@@ -20,12 +20,43 @@ import java.util.List;
 
 public class Difference {
     public static void main(String[] args) {
-        int[] array1 = {1, 2};
-        int[] array2 = {3, 4};
+        int[] array1 = {1, 2, 3};
+        int[] array2 = {2, 3, 4};
         System.out.println((difference(array1, array2)));
     }
 
-    private static List<Integer> difference(int[] array1, int[] array2) {
+    private static List difference(int[] array1, int[] array2) {
+
+        List<Integer> listOfDifferentNumbers = new ArrayList<>();
+
+
+        for (int i = 0; i < array1.length; i++) {
+            int counter = 0;
+            for (int j = 0; j < array2.length; j++) {
+                if (array1[i] == array2[j]) {
+                    counter++;
+                }
+            }
+            if (counter==0) {
+                listOfDifferentNumbers.add(array1[i]);
+            }
+        }
+        return listOfDifferentNumbers;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+   /* private static List<Integer> difference(int[] array1, int[] array2) {
         List<Integer> listOfDiffs = new ArrayList<>();
 
         for (int i = 0; i < array1.length; i++) {
@@ -43,4 +74,22 @@ public class Difference {
 
         return listOfDiffs;
     }
+
+    private static List<Integer> difference2(int[] array1, int[] array2) {
+        List<Integer> listOfDiffs = new ArrayList<>();
+
+        for (int value : array1) {
+            int countMatches = 0;
+            for (int i : array2) {
+                if (value == i) {
+                    countMatches++;
+                }
+            }
+            if (countMatches == 0) {
+                listOfDiffs.add(value);
+            }
+        }
+
+        return listOfDiffs;
+    }*/
 }
